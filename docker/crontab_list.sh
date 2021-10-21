@@ -72,16 +72,18 @@
 0 1,9,23 * * * node /scripts/jd_opencard6.js >> /scripts/logs/jd_opencard6.log 2>&1
 #jd_opencard3
 45 0,12,21 * * * node /scripts/jd_opencard3.js >> /scripts/logs/jd_opencard3.log 2>&1
-#jd_opencard5
-15 0,12,18 * * * node /scripts/jd_opencard5.js >> /scripts/logs/jd_opencard5.log 2>&1
 #jd_opencard7
 15 1,13,22 * * * node /scripts/jd_opencard7.js >> /scripts/logs/jd_opencard7.log 2>&1
+#jd_opencard8
+05 2,11,19 * * * node /scripts/jd_opencard8.js >> /scripts/logs/jd_opencard8.log 2>&1
 #jd_ddworld_exchange
 0 0,9 * * * node /scripts/jd_ddworld_exchangebean.js >> /scripts/logs/jd_ddworld_exchangebean.log 2>&1
 # 攒金币 赢大礼
 22 0,8 * * * node /scripts/jd_GoldcoinToGift.js >> /scripts/logs/jd_GoldcoinToGift.log 2>&1
 # 城城分现金
 0 0-23/1 * * * node /scripts/jd_CityNew.js >> /scripts/logs/jd_CityNew.log 2>&1
+# 预售福利姬
+5 0,2 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -171,12 +173,12 @@
 # jd_cash_exchange
 # 0,1,2 0 * * * node /scripts/jd_cash_exchange.js >> /scripts/logs/jd_cash_exchange.log 2>&1
 # 京喜农场
-#0 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
+# 0 9,12,18 * * * node /scripts/jd_jxnc.js >> /scripts/logs/jd_jxnc.log 2>&1
 # 价格保护
 # 48 */8 * * * node /scripts/jd_work_price.js >> /scripts/logs/jd_work_price.log 2>&1
 # 惊喜红包返现助力
 # 48 20 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
 # jd_car_exchange
-#0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
+# 0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 清空购物车
-#0 1 * * * node /scripts/jd_CartRemove.js >> /scripts/logs/jd_CartRemove.log 2>&1
+# 0 1 * * * node /scripts/jd_CartRemove.js >> /scripts/logs/jd_CartRemove.log 2>&1
