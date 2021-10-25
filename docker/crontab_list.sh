@@ -64,6 +64,8 @@
 10 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
 #芥么签到
 11 9,18 * * * node /scripts/jd_jmsign.js >> /scripts/logs/jd_jmsign.log 2>&1
+#芥么做任务
+15 9,18 * * * node /scripts/jd_jmtask.js >> /scripts/logs/jd_jmtask.log 2>&1
 #财富岛热气球接待
 30 * * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
 #jd_opencard4
@@ -72,8 +74,6 @@
 0 1,9,23 * * * node /scripts/jd_opencard6.js >> /scripts/logs/jd_opencard6.log 2>&1
 #jd_opencard3
 45 0,12,21 * * * node /scripts/jd_opencard3.js >> /scripts/logs/jd_opencard3.log 2>&1
-#jd_opencard7
-15 1,13,22 * * * node /scripts/jd_opencard7.js >> /scripts/logs/jd_opencard7.log 2>&1
 #jd_opencard8
 05 2,11,19 * * * node /scripts/jd_opencard8.js >> /scripts/logs/jd_opencard8.log 2>&1
 #jd_ddworld_exchange
@@ -84,6 +84,12 @@
 0 0-23/1 * * * node /scripts/jd_CityNew.js >> /scripts/logs/jd_CityNew.log 2>&1
 # 预售福利姬
 5 0,2 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
+# 手机狂欢城
+0 0,3 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
+# 手机狂欢城help
+20 1,3 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
+# 推一推
+20 3,13 * * * node /scripts/jd_tyt.js >> /scripts/logs/jd_tyt.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -167,7 +173,7 @@
 10 9-20/1 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 京东摇一摇
 0 1,17 * * * node /scripts/jd_shake.js >> /scripts/logs/jd_shake.log 2>&1
-京东试用（默认注释，请配合取关脚本使用）
+#京东试用（默认注释，请配合取关脚本使用）
 10 0 * * *  node /scripts/jd_try_new.js >> /scripts/logs/jd_try_new.log 2>&1
 ##############默认注释活动##############
 # jd_cash_exchange
