@@ -1,14 +1,14 @@
 /*
-10.28~11.05 大牌强联合 好物提前购 [gua_opencard52.js]
+11.05~11.12 11.11狂欢节 品牌盛典 [gua_opencard65.js]
 新增开卡脚本
 一次性脚本
 
 1.邀请一人20豆
-2.开2组(共9张) 成功开1组 获得1次抽奖
+2.开2组(共10张) 成功开1组 获得1次抽奖
   抽奖可能获得30京豆
 3.关注10豆 
 4.加购5京豆
-  (默认不加购 如需加购请设置环境变量[guaopencard_addSku52]为"true"
+  (默认不加购 如需加购请设置环境变量[guaopencard_addSku65]为"true"
 5.浏览店铺1豆/个
 
 第一个账号助力作者 其他依次助力CK1
@@ -16,30 +16,30 @@
 
 默认脚本不执行
 如需执行脚本请设置环境变量
-guaopencard52="true"
+guaopencard65="true"
 每个账号之间延迟 100=延迟100秒 0=延迟0秒会使用每3个账号延迟60秒
 guaopenwait_All 所有
-guaopenwait52="0"
+guaopenwait65="0"
 
 
 All变量适用
 ————————————————
-入口：[ 10.28~11.05 大牌强联合 好物提前购 (https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=946hf38m5d4vqjgs5ctfuickj65s69l528&shareUuid=f8350c1d5aef4068a54cd2a32164b068)]
+入口：[ 11.05~11.12 11.11狂欢节 品牌盛典 (https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=ak8842783h0bxbsyn8y26tsftcvp1105&shareUuid=f047c49affc74f969248cfe2fa4ea038)]
 
 请求太频繁会被黑ip
 过10分钟再执行
 
 ============Quantumultx===============
 [task_local]
-#10.28~11.05 大牌强联合 好物提前购
-47 3 28-31,1-5 10,11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard52.js, tag=10.28~11.05 大牌强联合 好物提前购, enabled=true
+#11.05~11.12 11.11狂欢节 品牌盛典
+47 1 5-12 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard65.js, tag=11.05~11.12 11.11狂欢节 品牌盛典, enabled=true
 
 */
 let guaopencard_addSku = "false"
 let guaopencard = "true"
 let guaopenwait = "20"
 
-const $ = new Env('10.28~11.05 大牌强联合 好物提前购');
+const $ = new Env('11.05~11.12 11.11狂欢节 品牌盛典');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cleanCart = ''
@@ -65,11 +65,11 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 
-guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku52 ? process.env.guaopencard_addSku52 : `${guaopencard_addSku}`) : ($.getdata('guaopencard_addSku52') ? $.getdata('guaopencard_addSku52') : `${guaopencard_addSku}`);
+guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku65 ? process.env.guaopencard_addSku65 : `${guaopencard_addSku}`) : ($.getdata('guaopencard_addSku65') ? $.getdata('guaopencard_addSku65') : `${guaopencard_addSku}`);
 guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku_All ? process.env.guaopencard_addSku_All : `${guaopencard_addSku}`) : ($.getdata('guaopencard_addSku_All') ? $.getdata('guaopencard_addSku_All') : `${guaopencard_addSku}`);
-guaopencard = $.isNode() ? (process.env.guaopencard52 ? process.env.guaopencard52 : `${guaopencard}`) : ($.getdata('guaopencard52') ? $.getdata('guaopencard52') : `${guaopencard}`);
+guaopencard = $.isNode() ? (process.env.guaopencard65 ? process.env.guaopencard65 : `${guaopencard}`) : ($.getdata('guaopencard65') ? $.getdata('guaopencard65') : `${guaopencard}`);
 guaopencard = $.isNode() ? (process.env.guaopencard_All ? process.env.guaopencard_All : `${guaopencard}`) : ($.getdata('guaopencard_All') ? $.getdata('guaopencard_All') : `${guaopencard}`);
-guaopenwait = $.isNode() ? (process.env.guaopenwait52 ? process.env.guaopenwait52 : `${guaopenwait}`) : ($.getdata('guaopenwait52') ? $.getdata('guaopenwait52') : `${guaopenwait}`);
+guaopenwait = $.isNode() ? (process.env.guaopenwait65 ? process.env.guaopenwait65 : `${guaopenwait}`) : ($.getdata('guaopenwait65') ? $.getdata('guaopenwait65') : `${guaopenwait}`);
 guaopenwait = $.isNode() ? (process.env.guaopenwait_All ? process.env.guaopenwait_All : `${guaopenwait}`) : ($.getdata('guaopenwait_All') ? $.getdata('guaopenwait_All') : `${guaopenwait}`);
 guaopenwait = parseInt(guaopenwait, 10) || 0
 allMessage = ""
@@ -82,7 +82,7 @@ let activityCookie =''
 !(async () => {
   if ($.isNode()) {
     if(guaopencard+"" != "true"){
-      console.log('如需执行脚本请设置环境变量[guaopencard52]为"true"')
+      console.log('如需执行脚本请设置环境变量[guaopencard65]为"true"')
     }
     if(guaopencard+"" != "true"){
       return
@@ -94,8 +94,8 @@ let activityCookie =''
     });
     return;
   }
-  $.activityId = "946hf38m5d4vqjgs5ctfuickj65s69l528"
-  $.shareUuid = "29e839199401447c886706d72bdf63dd"
+  $.activityId = "ak8842783h0bxbsyn8y26tsftcvp1105"
+  $.shareUuid = "6929b3e0e78646a49cf004a7b8f0378c"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
@@ -110,6 +110,10 @@ let activityCookie =''
       await getUA()
       await run();
     }
+  }
+  if($.outFlag) {
+    let msg = '此ip已被限制，请过10分钟后再执行脚本'
+    $.msg($.name, ``, `${msg}`);
   }
 })()
     .catch((e) => $.logErr(e))
@@ -155,13 +159,12 @@ async function run() {
       console.log('获取不到[actorUuid]退出执行，请重新执行')
       return
     }
+    console.log($.actorUuid);
     if($.hasEnd === true || Date.now() > $.endTime){
       $.activityEnd = true
       console.log('活动结束')
       return
     }
-    // console.log($.actorUuid)
-    // return
     await takePostRequest('drawContent');
     await $.wait(1000)
     $.openList = []
@@ -217,11 +220,11 @@ async function run() {
         await takePostRequest('addSku');
         await $.wait(parseInt(Math.random() * 1000 + 5000, 10))
         if(cleanCart && goodsArr !== false){
-          await $.wait(parseInt(Math.random() * 1000 + 4000, 10))
-          await cleanCart.clean(cookie,'https://jd.smiek.tk/jdcleancatr_21102717',goodsArr || [ ])
+          // await $.wait(parseInt(Math.random() * 1000 + 4000, 10))
+          await cleanCart.clean(cookie,'https://jd.smiek.tk/jdcleancatr_21102717',goodsArr || [])
         }
       }else{
-        console.log('如需加购请设置环境变量[guaopencard_addSku52]为"true"');
+        console.log('如需加购请设置环境变量[guaopencard_addSku65]为"true"');
       }
     }
     $.runFalag = true
@@ -265,7 +268,7 @@ async function run() {
 
 async function takePostRequest(type) {
   if($.outFlag) return
-  let url = 'https://lzdz1-isv.isvjcloud.com';
+  let domain = 'https://lzdz1-isv.isvjcloud.com';
   let body = ``;
   let method = 'POST'
   let admJson = ''
@@ -275,48 +278,48 @@ async function takePostRequest(type) {
       body = `body=%7B%22url%22%3A%22https%3A//lzdz1-isv.isvjcloud.com%22%2C%22id%22%3A%22%22%7D&uuid=0846724fe8d803b8e84ebd14b3ba7fac6df80e7a&client=apple&clientVersion=10.1.4&st=1634616247215&sv=120&sign=91a16ae2feb0bd0e1ea48d99e7953c58`;
       break;
       case 'getSimpleActInfoVo':
-        url = `${url}/dz/common/getSimpleActInfoVo`;
+        url = `${domain}/dz/common/getSimpleActInfoVo`;
         body = `activityId=${$.activityId}`;
         break;
       case 'getMyPing':
-        url = `${url}/customer/getMyPing`;
+        url = `${domain}/customer/getMyPing`;
         body = `userId=${$.shopId || $.venderId || ''}&token=${$.Token}&fromType=APP`;
         break;
       case 'accessLogWithAD':
-        url = `${url}/common/accessLogWithAD`;
-        let pageurl = `${url}/drawCenter/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`
+        url = `${domain}/common/accessLogWithAD`;
+        let pageurl = `${domain}/drawCenter/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`
         body = `venderId=${$.shopId || $.venderId || ''}&code=99&pin=${encodeURIComponent($.Pin)}&activityId=${$.activityId}&pageUrl=${encodeURIComponent(pageurl)}&subType=app&adSource=`
         break;
       case 'getUserInfo':
-        url = `${url}/wxActionCommon/getUserInfo`;
+        url = `${domain}/wxActionCommon/getUserInfo`;
         body = `pin=${encodeURIComponent($.Pin)}`;
         break;
       case 'activityContent':
-        url = `${url}/dingzhi/dz/openCard/activityContent`;
+        url = `${domain}/dingzhi/dz/openCard/activityContent`;
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}&pinImg=${encodeURIComponent($.attrTouXiang)}&nick=${encodeURIComponent($.nickname)}&cjyxPin=&cjhyPin=&shareUuid=${$.shareUuid}`
         break;
       case 'drawContent':
-        url = `${url}/dingzhi/taskact/openCardcommon/drawContent`;
+        url = `${domain}/dingzhi/taskact/openCardcommon/drawContent`;
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}`
         break;
       case 'checkOpenCard':
-        url = `${url}/dingzhi/dz/openCard/checkOpenCard`;
+        url = `${domain}/dingzhi/dz/openCard/checkOpenCard`;
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}&actorUuid=${$.actorUuid}&shareUuid=${$.shareUuid}`
         break;
       case 'startDraw':
-        url = `${url}/dingzhi/dz/openCard/startDraw`;
+        url = `${domain}/dingzhi/dz/openCard/startDraw`;
         body = `activityId=${$.activityId}&actorUuid=${$.actorUuid}&pin=${encodeURIComponent($.Pin)}${$.startDraw && '&type='+$.startDraw || ''}`
         break;
       case 'followShop':
-        url = `${url}/dingzhi/dz/openCard/followShop`;
-        // url = `${url}/dingzhi/dz/openCard/saveTask`;
+        url = `${domain}/dingzhi/dz/openCard/followShop`;
+        // url = `${domain}/dingzhi/dz/openCard/saveTask`;
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}&actorUuid=${$.actorUuid}&shareUuid=${$.shareUuid}&taskType=23&taskValue=${$.followShopValue}`
         break;
       case 'viewVideo':
       case 'visitSku':
       case 'toShop':
       case 'addSku':
-        url = `${url}/dingzhi/dz/openCard/saveTask`;
+        url = `${domain}/dingzhi/dz/openCard/saveTask`;
         let taskType = ''
         let taskValue = ''
         if(type == 'viewVideo'){
@@ -335,11 +338,11 @@ async function takePostRequest(type) {
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}&actorUuid=${$.actorUuid}&taskType=${taskType}&taskValue=${taskValue}`
         break;
       case 'getDrawRecordHasCoupon':
-        url = `${url}/dingzhi/taskact/openCardcommon/getDrawRecordHasCoupon`;
+        url = `${domain}/dingzhi/taskact/openCardcommon/getDrawRecordHasCoupon`;
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}&actorUuid=${$.actorUuid}`
         break;
       case 'getShareRecord':
-        url = `${url}/dingzhi/taskact/openCardcommon/getShareRecord`;
+        url = `${domain}/dingzhi/taskact/openCardcommon/getShareRecord`;
         body = `activityId=${$.activityId}&pin=${encodeURIComponent($.Pin)}&actorUuid=${$.actorUuid}`
         break;
       default:

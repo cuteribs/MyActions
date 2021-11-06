@@ -64,12 +64,12 @@
 15 9,18 * * * node /scripts/jd_jmtask.js >> /scripts/logs/jd_jmtask.log 2>&1
 #财富岛热气球接待
 30 * * * * node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
+#jd_opencard20
+30 1,23 * * * node /scripts/jd_opencard20.js >> /scripts/logs/jd_opencard20.log 2>&1
 #jd_opencard19
 30 6,21 * * * node /scripts/jd_opencard19.js >> /scripts/logs/jd_opencard19.log 2>&1
 #jd_opencard18
 05 2,12 * * * node /scripts/jd_opencard18.js >> /scripts/logs/jd_opencard18.log 2>&1
-#jd_opencard16
-55 3,13 * * * node /scripts/jd_opencard16.js >> /scripts/logs/jd_opencard16.log 2>&1
 #jd_opencard15
 55 4,14 * * * node /scripts/jd_opencard15.js >> /scripts/logs/jd_opencard15.log 2>&1
 #jd_opencard14
@@ -82,8 +82,6 @@
 30 0,18 * * * node /scripts/jd_opencard11.js >> /scripts/logs/jd_opencard11.log 2>&1
 #jd_opencard10
 05 3,19 * * * node /scripts/jd_opencard10.js >> /scripts/logs/jd_opencard10.log 2>&1
-#jd_opencard9
-05 1,20 * * * node /scripts/jd_opencard9.js >> /scripts/logs/jd_opencard9.log 2>&1
 #jd_opencard17
 05 2,21 * * * node /scripts/jd_opencard17.js >> /scripts/logs/jd_opencard17.log 2>&1
 #jd_ddworld_exchange
@@ -105,7 +103,7 @@
 # 发财挖宝
 20 1,9,16 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 星店长
-5 7,12,20 * * * node /scripts/jd_star.js >> /scripts/logs/jd_star.log 2>&1
+01 10,15,20 * * * node /scripts/jd_NewStar.js >> /scripts/logs/jd_NewStar.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -148,8 +146,6 @@
 16 6,23 * * * node /scripts/jd_small_home.js >> /scripts/logs/jd_small_home.log 2>&1
 # 东东工厂
 36 */4 * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
-# 十元街
-36 0-23/4 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 # 京东快递签到
 23 1 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
