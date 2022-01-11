@@ -37,7 +37,7 @@ const pkTeamNum = () => Math.ceil(cookiesArr.length / 30)
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    readShareCodeRes = await getAuthorShareCode('https://gitee.com/linshi999/test/raw/master/nianshou.json')
+    readShareCodeRes = { "coin": [], "team": [],  "red": [], "code": 200 };
     console.log(`
 【温馨提示】
 默认膨胀时间：22时， 默认开启膨胀红包时间：23时
