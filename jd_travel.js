@@ -37,7 +37,40 @@ const pkTeamNum = () => Math.ceil(cookiesArr.length / 30)
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    readShareCodeRes = { "coin": [], "team": [],  "red": [], "code": 200 };
+    readShareCodeRes = {
+  "coin": [
+    {
+      "pin": "可爱的排骨",
+      "code": "ZXASTT011678qE0hAqwEFjRWn6W7zB55awQ"
+    },
+    {
+      "pin": "jjyoshiki",
+      "code": "ZXASTT0125Kc6H11BrA-OFjRWn6W7zB55awQ"
+    },
+    {
+      "pin": "xxp_42",
+      "code": "ZXASTT019-akbI1pNtQuBYUms9JMFjRWn6W7zB55awQ"
+    },
+    {
+      "pin": "kik1111",
+      "code": "ZXASTT0105aQoQR8Y9AFjRWn6W7zB55awQ"
+    },
+    {
+      "pin": "灰原爱猫",
+      "code": "ZXASTT0107aw3QR4b_AFjRWn6W7zB55awQ"
+    },
+    {
+      "pin": "jd_6b5a7da805ab6",
+      "code": "ZXASTT0225KkcRkwcpFODcRL0kaZYcgFjRWn6W7zB55awQ"
+    }
+  ],
+  "team": [
+  ],
+  "red": [
+    
+  ],
+  "code": 200
+};
     console.log(`
 【温馨提示】
 默认膨胀时间：22时， 默认开启膨胀红包时间：23时
@@ -253,7 +286,7 @@ async function team() {
         }
     }
     const { groupJoinInviteId, groupName, groupNum } = pkHomeData?.groupInfo || {}
-    if (groupName && groupNum !== undefined) console.log(`当前战队：${groupName}（${groupNum}）`)
+    if (groupName && groupNum !== undefined) console.log(`当前战队：${groupName}（${groupNum}）, ${groupJoinInviteId}`)
     if (groupNum > 1) {
         teamMap[groupName] = teamMap[groupName] || []
         teamMap[groupName].push($.UserName)
