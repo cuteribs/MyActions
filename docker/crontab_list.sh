@@ -76,8 +76,7 @@
 59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 # 省钱大赢家翻翻乐2
 20 0,6-23 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-# 城城分现金
-01 * * * * node /scripts/jd_City.js >> /scripts/logs/jd_City.log 2>&1
+
 # 年货签到
 0 8 * * * node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 # 见缝插针
@@ -88,8 +87,6 @@
 57 2 * * * node /scripts/jd_dayday_ysq.js >> /scripts/logs/jd_dayday_ysq.log 2>&1
 # 京享红包
 0 0,10,20,21 * * * node /scripts/jd_nhRedEnvelope.js.js >> /scripts/logs/jd_nhRedEnvelope.js.log 2>&1
-#炸年兽
-33 0,6-23/2 * * * node /scripts/jd_travel.js.js >> /scripts/logs/jd_travel.js.log 2>&1
 #jd_opencard94
 30 1 5-25/2,26 1 * node /scripts/jd_opencard94.js >> /scripts/logs/jd_opencard94.log 2>&1
 #jd_opencard95
