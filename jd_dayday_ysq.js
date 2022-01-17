@@ -35,6 +35,7 @@ const JD_API_HOST = `https://m.jingxi.com`;
         return;
     }
     res = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/ttysq.json')
+	res = [];
     $.shareCodeList = [...new Set([...$.shareCodeList,...res || []])]
     //await getToken();
     cookiesArr = cookiesArr.map(ck => ck + `joyytoken=50084${joyToken};`)
