@@ -34,7 +34,6 @@ const JD_API_HOST = `https://m.jingxi.com`;
         $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    res = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/ttysq.json')
 	res = [];
     $.shareCodeList = [...new Set([...$.shareCodeList,...res || []])]
     //await getToken();

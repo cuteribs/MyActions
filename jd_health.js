@@ -405,7 +405,7 @@ function shareCodesFormat() {
     if (!ZLC) {
       console.log(`您设置了不加入助力池，跳过\n`)
     } else {
-      const readShareCodeRes = await readShareCode();
+      const readShareCodeRes = [];
       if (readShareCodeRes && readShareCodeRes.code === 200) {
         $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
       }

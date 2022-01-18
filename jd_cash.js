@@ -50,7 +50,7 @@ let allMessage = '';
     return;
   }
   await requireConfig()
-  $.authorCode = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/RandomShareCode/git/raw/main/JD_Cash.json')
+  $.authorCode = [];
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];

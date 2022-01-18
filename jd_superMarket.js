@@ -319,11 +319,11 @@ async function businessCircleActivity() {
     if (joinStatus === 0) {
       if (joinPkTeam === 'true') {
         console.log(`\n注：PK会在每天的七点自动随机加入LXK9301创建的队伍\n`)
-        await updatePkActivityIdCDN('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/jd_updateTeam.json');
+        //await updatePkActivityIdCDN('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/jd_updateTeam.json');
         console.log(`\nupdatePkActivityId[pkActivityId]:::${$.updatePkActivityIdRes && $.updatePkActivityIdRes.pkActivityId}`);
         console.log(`\n京东服务器返回的[pkActivityId] ${pkActivityId}`);
         if ($.updatePkActivityIdRes && ($.updatePkActivityIdRes.pkActivityId === pkActivityId)) {
-          await getTeam();
+          //await getTeam();
           let Teams = []
           Teams = $.updatePkActivityIdRes['Teams'] || Teams;
           if ($.getTeams && $.getTeams.length) {
