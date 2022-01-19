@@ -35,10 +35,7 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [
-    `ACjVSmK-QzzYAFWX83XxNnQ@S5KkcH1lQpB6qW3uX06Fu@ACjBfn6iTzTYBAGaXnQ@A3avtRgYKGqKz3e15@A373QSgwwGJOy3Oh-CfTM@S5KkcRBoRp1SEJBP1nKIDdg@S5KkcRR1K8wXXJxKiwaIIdA@Sv_h6Rhof_FzTIxyb1A@S5KkcNmJNlxOBRUCU9axO@A06fNRgYIG7Kz3ul3Ctb-Q-ggGzUB`,
-    `ACjVSmK-QzzYAFWX83XxNnQ@S5KkcH1lQpB6qW3uX06Fu@ACjBfn6iTzTYBAGaXnQ@A3avtRgYKGqKz3e15@A373QSgwwGJOy3Oh-CfTM@S5KkcRBoRp1SEJBP1nKIDdg@S5KkcRR1K8wXXJxKiwaIIdA@Sv_h6Rhof_FzTIxyb1A@S5KkcNmJNlxOBRUCU9axO@A06fNRgYIG7Kz3ul3Ctb-Q-ggGzUB`,
-]
+const inviteCodes = []
 let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000);
 !(async () => {
   await requireConfig();
@@ -134,6 +131,7 @@ function getUserInfo() {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (safeGet(data)) {
+			console.log('data', data);
             data = JSON.parse(data);
             // if (data.data.shareTaskRes) {
             //   console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${data.data.shareTaskRes.itemId}\n`);
