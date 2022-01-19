@@ -154,6 +154,7 @@ function getInfo(inviteId, flag = false) {
             if (data.code === 0) {
               if (data.data && data['data']['bizCode'] === 0) {
                   if (flag) {
+					  console.log(JSON.stringify(data.data));
                       console.log(`【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${data.data && data.data.result.userActBaseInfo.inviteId}`);
                       if (data.data && data.data.result.userActBaseInfo.inviteId) {
                       }
