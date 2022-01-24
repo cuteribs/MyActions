@@ -54,8 +54,6 @@
 0 0,9 * * * node /scripts/jd_ddworld_exchangebean.js >> /scripts/logs/jd_ddworld_exchangebean.log 2>&1
 # 推一推
 20 3,13 * * * node /scripts/jd_tyt.js >> /scripts/logs/jd_tyt.log 2>&1
-# 省钱大赢家翻翻乐
-27 0-23/6 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 # 签到免单
 1 0,12,18 * * * node /scripts/jd_speed_signfree.js >> /scripts/logs/jd_speed_signfree.log 2>&1
 # 超级盒子
@@ -70,8 +68,6 @@
 31 8 * * * node /scripts/jd_mofang_ex.js >> /scripts/logs/jd_mofang_ex.log 2>&1
 # 京东小魔方
 10 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.log 2>&1
-# 京喜签到-喜豆
-10 2,9 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 财富岛珍珠兑换
 59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 # 省钱大赢家翻翻乐2
@@ -100,20 +96,18 @@
 10 6,10,12 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
 #头文字J 助力
 10 3 * * * node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
-#jd_opencard102
-30 3 13-20/3 1 * node /scripts/jd_opencard102.js >> /scripts/logs/jd_opencard102.log 2>&1
-#jd_opencard105
-30 4 6-20/3 1 * node /scripts/jd_opencard105.js >> /scripts/logs/jd_opencard105.log 2>&1
 #饭粒
 10 9 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
-#jd_opencard106
-30 6 14-21/3 1 * node /scripts/jd_opencard106.js >> /scripts/logs/jd_opencard106.log 2>&1
-#jd_opencard107
-30 0 14-21/3 1 * node /scripts/jd_opencard107.js >> /scripts/logs/jd_opencard107.log 2>&1
 #通天塔签到共建
 0 0,3 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
-#炸年兽
-33 0,6-23/2 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
+#jd_opencard109
+30 3 20-29/3 1 * node /scripts/jd_opencard109.js >> /scripts/logs/jd_opencard109.log 2>&1
+#jd_opencard110
+30 2 19-28/3 1 * node /scripts/jd_opencard110.js >> /scripts/logs/jd_opencard110.log 2>&1
+#jd_opencard111
+30 4 21-27/3 1 * node /scripts/jd_opencard111.js >> /scripts/logs/jd_opencard111.log 2>&1
+#jd_opencard112
+30 5 1-15/3,17-31/3 1,2 * node /scripts/jd_opencard112.js >> /scripts/logs/jd_opencard112.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
