@@ -78,6 +78,14 @@
 20 4,19 * * * node /scripts/jd_xmf.js >> /scripts/logs/jd_xmf.log 2>&1
 #jd_xfxd_new
 18 0 * * * node /scripts/jd_xfxd_new.js >> /scripts/logs/jd_xfxd_new.log 2>&1
+#jd_opencardL84
+31 1,14 1-8 3 * node /scripts/jd_opencardL84.js >> /scripts/logs/jd_opencardL84.log 2>&1
+#jd_opencardL86
+30 10,18 1-15 3 * node /scripts/jd_opencardL86.js >> /scripts/logs/jd_opencardL86.log 2>&1
+#jd_opencardL87
+30 1,14 1-8 3 * node /scripts/jd_opencardL87.js >> /scripts/logs/jd_opencardL87.log 2>&1
+#jd_opencardL88
+31 4,13 1-8 3 * node /scripts/jd_opencardL88.js >> /scripts/logs/jd_opencardL88.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -93,8 +101,7 @@
 5 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
 # 京东种豆得豆
 0  */6 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
-# 京东全民开红包
-1 1 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
+
 # 进店领豆
 10 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 东东超市
