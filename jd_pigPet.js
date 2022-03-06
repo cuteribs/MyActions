@@ -31,6 +31,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let shareId = ["JfMCqJzMqyCEGqGaVFjVlMAdoUJQ3Dik","cJE2vVeGzdr7DSdql0TkWw","19LeyHJ6didHxoO8w95b6sAdoUJQ3Dik"][Math.floor((Math.random()*3))]
+shareId = '';
 $.shareCodes = [];
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
