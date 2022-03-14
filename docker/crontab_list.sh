@@ -82,11 +82,11 @@
 30 10,18 1-15 3 * node /scripts/jd_opencardL86.js >> /scripts/logs/jd_opencardL86.log 2>&1
 #jd_opencard115
 30 2 19,3-18/3 3 * node /scripts/jd_opencard115.js >> /scripts/logs/jd_opencard115.log 2>&1
+#jd_ddworld_exchangebean
+0 0,9 * * * node /scripts/jd_ddworld_exchangebean.js >> /scripts/logs/jd_ddworld_exchangebean.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
-# 东东超市兑换奖品
-0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
 0 0 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
